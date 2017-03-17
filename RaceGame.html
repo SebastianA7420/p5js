@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Objects: Simple Cars</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.13/p5.js"></script>
+    <script>
+      
+      var car1;  
+      var car2;
+      var car3;
+      
+      function setup() {
+        createCanvas(500,500);
+        playerWidth = 30
+        playerHeight = height - 69.85
+        Rect1 = new Rect();
+        Rect2 = new Rect();
+        Rect3 = new Rect();
+        Rect4 = new Shape();
+        Rect5 = new Shape();
+        Rect6 = new Shape();
+        Rect7 = new Seb();
+        Rect8 = new Seb();
+        Rect9 = new Seb();
+      }
+      
+      function draw() {
+        background("red"); 
+        player()
+        fill("purple")
+        Rect1.move();
+        Rect1.display();
+        Rect2.move();
+        Rect2.display();
+        Rect3.move();
+        Rect3.display();
+        fill("orange")
+        Rect4.move();
+        Rect4.display();
+        Rect5.move();
+        Rect5.display();
+        Rect6.move();
+        Rect6.display();
+        fill("pink")
+        Rect7.move();
+        Rect7.display();
+        Rect8.move();
+        Rect8.display();
+        Rect9.move();
+        Rect9.display();
+        text("race game", 200, 200)
+      }
+        function Rect(){
+        this.x = (width);
+        this.y = 225;
+        this.speed = 8;
+        
+        this.move = function(){
+          this.x += this.speed;
+          if(this.x > width){
+            this.x = 0;
+          }
+        }
+
+        this.display = function(){
+          rect(this.x,this.y,50,50);
+        }
+        
+      }
+      
+      function Shape(){
+        this.x =(width);
+        this.y = 125;
+        this.speed = 5;
+        
+        this.move = function(){
+          this.x += this.speed;
+          if(this.x > width){
+            this.x = 0;
+          }
+        }
+
+        this.display = function(){
+          rect(this.x,this.y,100,50);
+        }
+        
+      }
+      
+      function Seb(){
+        this.x =(width);
+        this.y = 325;
+        this.speed = 5;
+        
+        this.move = function(){
+          this.x += this.speed;
+          if(this.x > width){
+            this.x = 0;
+          }
+        }
+
+        this.display = function(){
+          rect(this.x,this.y,100,50);
+        }
+        
+      }
+      
+       function player() {
+            stroke("black")
+            strokeWeight(1)
+            fill(255)
+            ellipse(playerWidth, playerHeight, 20, 20)
+            rect(playerWidth-10, playerHeight+10, 20, 23.85)
+                        
+            // left key = move left
+            if (keyIsDown(LEFT_ARROW)){
+                playerWidth -= 5
+            }
+            
+            //right key = move right
+            if (keyIsDown(RIGHT_ARROW)){
+                playerWidth += 5  
+            }
+            }
+      
+        
+</script>
+
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/SebastianA7420/p5js/blob/gh-pages/RaceGame.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas').remove());
+        });
+    </script>
+</body>
